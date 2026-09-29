@@ -1,0 +1,42 @@
+/*
+ * DESIGN TOKENS — the single source of truth for the theme.
+ * On WordPress/Divi these map to:
+ *   colors      -> Divi Theme Customizer > General Settings > Color Palette / Global Colors
+ *   fonts       -> Theme Customizer > General Settings > Typography
+ *   radius/shadow/spacing -> Divi Design Presets (Button, Blurb, Toggle) and Section/Row padding
+ * See docs/DIVI-MAPPING.md.
+ */
+:root {
+  /* Colors */
+  --bf-navy-950: #060f1f;
+  --bf-navy-900: #0a1a33;
+  --bf-navy-800: #10284a;
+  --bf-accent: #1f8bff; /* primary blue */
+  --bf-accent-600: #0f6fe0;
+  --bf-teal: #22d3c5; /* secondary accent */
+  --bf-ink: #0d1b2e; /* body text on light */
+  --bf-muted: #55657a;
+  --bf-line: #e2e8f1;
+  --bf-bg: #ffffff;
+  --bf-bg-alt: #f4f7fb;
+  --bf-on-dark: #e8effa;
+  --bf-on-dark-muted: #9fb2cd;
+
+  /* Typography */
+  --bf-font-body: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --bf-font-heading: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
+
+  /* Shape & depth */
+  --bf-radius: 16px;
+  --bf-radius-sm: 10px;
+  --bf-radius-pill: 999px;
+  --bf-shadow: 0 1px 2px rgba(10, 26, 51, 0.06), 0 10px 30px -12px rgba(10, 26, 51, 0.18);
+  --bf-shadow-lg: 0 20px 50px -20px rgba(10, 26, 51, 0.35);
+
+  /* Layout — Divi default content width is 1080px; we use 1200px (Divi: Theme Customizer > General > Layout Settings) */
+  --bf-content-width: 1200px;
+  --bf-gutter: 32px;
+  --bf-section-y-sm: 56px;
+  --bf-section-y-md: 80px;
+  --bf-section-y-lg: 112px;
+}
