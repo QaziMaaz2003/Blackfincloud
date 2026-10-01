@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import { Column, Row, Section } from '../components/divi'
 import { Icon } from '../components/modules/Icon'
-import { contact, footer, nav } from '../content/site'
+import { contact, footer, mapsLink, nav } from '../content/site'
 
 function Logo({ light = false }: { light?: boolean }) {
   return (
@@ -94,8 +94,21 @@ export function Footer() {
             <ul className="bf-footer__list">
               <li>
                 <Icon name="pin" size={16} />
-                <span>{contact.address}</span>
+                <a href={mapsLink(contact.address)} target="_blank" rel="noreferrer">
+                  {contact.address}
+                </a>
               </li>
+              {contact.otherOffices.map((o) => (
+                <li key={o.address} className="bf-footer__office">
+                  <Icon name="pin" size={16} />
+                  <span>
+                    <em>{o.name}</em>
+                    <a href={mapsLink(o.address)} target="_blank" rel="noreferrer">
+                      {o.address}
+                    </a>
+                  </span>
+                </li>
+              ))}
               <li>
                 <Icon name="phone" size={16} />
                 <a href={contact.phoneHref}>{contact.phone}</a>
@@ -123,6 +136,13 @@ export function Footer() {
         </Row>
         <div className="et_pb_row bf-footer__legal">
           <p>{footer.legal}</p>
+          <p className="bf-footer__policies">
+            {footer.links.map((l) => (
+              <a key={l.label} href={l.href} target="_blank" rel="noreferrer">
+                {l.label}
+              </a>
+            ))}
+          </p>
         </div>
       </Section>
     </footer>

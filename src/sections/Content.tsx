@@ -47,7 +47,7 @@ export function SolutionsTeaser() {
           </Column>
         ))}
       </Row>
-      <MoreLink to="/solutions">Explore all solutions</MoreLink>
+      <MoreLink to="/power-platform">Explore Power Platform</MoreLink>
     </Section>
   )
 }

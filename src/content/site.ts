@@ -8,18 +8,24 @@ const unsplash = (id: string, w = 1200) =>
   `https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=${w}&q=75`
 
 export const contact = {
-  address: '26632 Towne Center Dr #312, Foothill Ranch, CA 92610',
+  // Main address (Redding). Foothill Ranch is kept as an additional office.
+  address: '2055 Pine Street, Redding, CA 96001',
+  city: 'Redding, California',
+  otherOffices: [{ name: 'Foothill Ranch office', address: '26632 Towne Center Dr #312, Foothill Ranch, CA 92610' }],
   phone: '(949) 478-0901',
   phoneHref: 'tel:+19494780901',
   email: 'contracts@blackfincloud.com',
-  linkedin: 'https://www.linkedin.com/company/blackfin-cloud-services',
-  // Consultation scheduling (live site uses Calendly). Replace with the real booking link.
-  calendly: 'https://calendly.com/blackfincloud',
+  linkedin: 'https://www.linkedin.com/in/owenbscott/',
+  // 30-minute demo / discovery booking link (same one used on go.blackfingov.com)
+  calendly: 'https://calendly.com/blackfincloud/30min',
 }
+
+export const mapsLink = (address: string) => `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`
 
 export const nav = [
   { label: 'About', href: '/about' },
-  { label: 'Solutions', href: '/solutions' },
+  { label: 'Power Platform', href: '/power-platform' },
+  { label: 'Products', href: '/products' },
   { label: 'Industries', href: '/industries' },
   { label: 'Past Performance', href: '/past-performance' },
   { label: 'Process', href: '/process' },
@@ -32,7 +38,7 @@ export const hero = {
   subtitle:
     'Enterprise-grade low-code solutions shaped around your operations—and delivered in weeks instead of years.',
   primaryCta: { label: 'Schedule free discovery call', href: '/contact' },
-  secondaryCta: { label: 'Explore solutions', href: '/solutions' },
+  secondaryCta: { label: 'Explore Power Platform', href: '/power-platform' },
   image: unsplash('1522071820081-009f0129c71c', 1800),
   imageAlt: 'Operations leaders reviewing a digital workflow dashboard',
   stats: [
@@ -313,6 +319,10 @@ export const form = {
 }
 
 export const footer = {
+  links: [
+    { label: 'Terms', href: 'https://www.blackfincloud.com/terms-and-conditions/' },
+    { label: 'Privacy', href: 'https://www.blackfincloud.com/privacy/' },
+  ],
   blurb: 'Enterprise Microsoft solutions for the way your organization actually operates.',
   government: ['CMAS 3-24-05-2024', 'SAM CAGE: 8CP18', 'SAM UEI: NMH9P38XNZFS', 'DUNS: 08-135-7555'],
   naics: ['541511 · 541512 · 51320', '541519 · 51820 · 51920 · 541990'],
@@ -343,8 +353,8 @@ export const pages = {
     text: 'Since 2010 we have helped government and commercial teams turn Dynamics 365 and the Power Platform into software that fits the way they work.',
     image: unsplash('1521737604893-d14cc237f11d', 1800),
   },
-  solutions: {
-    eyebrow: 'Solutions',
+  powerPlatform: {
+    eyebrow: 'Power Platform',
     title: 'Your Microsoft stack. Fully working together.',
     text: 'Dynamics 365, Power Apps, Power Automate and Power BI—designed as one connected layer, from frontline data capture to executive reporting.',
     image: unsplash('1451187580459-43490279c0fa', 1800),
@@ -717,7 +727,7 @@ export const contactCards = [
   { icon: 'phone', title: 'Call us', text: 'Speak with a specialist.', value: contact.phone, href: contact.phoneHref },
   { icon: 'mail', title: 'Email us', text: 'Contracts and general inquiries.', value: contact.email, href: `mailto:${contact.email}` },
   { icon: 'calendar', title: 'Book a call', text: 'Pick a time that suits you.', value: 'Schedule on Calendly', href: contact.calendly },
-  { icon: 'pin', title: 'Visit', text: 'Foothill Ranch, California.', value: contact.address, href: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(contact.address)}` },
+  { icon: 'pin', title: 'Visit', text: `${contact.city}.`, value: contact.address, href: mapsLink(contact.address) },
 ]
 
 export const whoWeServe = {
@@ -792,4 +802,179 @@ export const cmasFaq = {
     { q: 'Can we also buy commercially?', a: 'Yes. Blackfin serves government and commercial clients. CMAS is simply one procurement option for California agencies.' },
     { q: 'Where can I find your registration details?', a: 'CMAS 3-24-05-2024, SAM CAGE 8CP18, SAM UEI NMH9P38XNZFS and DUNS 08-135-7555 are listed on this page and in our footer.' },
   ],
+}
+
+/* =====================================================================
+ * PRODUCTS — "Blackfin Cloud for Government"
+ * Transcribed from https://go.blackfingov.com and its three product one-sheets.
+ * Images in /public/products are the client's own screenshots and one-sheets.
+ * ===================================================================== */
+
+export const productsPage = {
+  eyebrow: 'Blackfin Cloud for Government',
+  title: 'Tools you can use. Deployed now.',
+  text: 'Three new flexible solutions that can be deployed in weeks, not months. Priced for any agency.',
+  image: unsplash('1541746972996-4e0b0f43e02a', 1800),
+  badge: 'Solutions for state and local government',
+}
+
+export const productsIntro = {
+  eyebrow: 'Modern government software',
+  title: 'Delivered faster, at a fraction of the cost, and built for your team to own.',
+  text: 'State and local government software—fast, affordable, and built for independence.',
+}
+
+export const productValues = {
+  eyebrow: 'Why Blackfin Cloud for Government',
+  title: 'Fast, affordable, and built for independence.',
+  items: [
+    { icon: 'bolt', title: 'Deployed in weeks, not months', text: 'Skip the usual year-long rollout. Each solution is built to go live in weeks, with deployment times of under 60 days.' },
+    { icon: 'dollar', title: 'Priced for any agency', text: 'Modern government software delivered at a fraction of the cost, and priced for ANY agency.' },
+    { icon: 'users', title: 'Built for your team to own', text: 'Built on the Microsoft Power Platform and integrated with Outlook and SharePoint, so your team can own it.' },
+  ],
+}
+
+export interface ProductGroup {
+  title: string
+  icon: string
+  items: string[]
+  ordered?: boolean
+}
+
+export interface Product {
+  slug: string
+  number: string
+  name: string
+  short: string
+  tagline?: string
+  lead: string
+  highlights: string[]
+  groups: ProductGroup[]
+  deployment: string
+  deploymentLabel: string
+  images: string[]
+  sheet: string
+  sheetAlt: string
+}
+
+export const products: Product[] = [
+  {
+    slug: 'geospatial-management',
+    number: '01',
+    name: 'Geospatial Management',
+    short: 'Live GIS mapping across any department asset type or service.',
+    tagline: 'The most flexible mapping solution, full-stop.',
+    lead: "Place ANY type of data with an address or Lat/Long onto a map, enriched by your back-end database and integrated with Microsoft Outlook, SharePoint, and the Power Platform.",
+    highlights: [
+      'Live GIS mapping across ANY department asset type or service',
+      'Custom automated workflows',
+      'Deployed in weeks, not the usual year-long GIS rollout',
+      'A full-blown management app for every type of data tracked',
+    ],
+    groups: [
+      { title: 'Potential uses', icon: 'target', items: ['Community Outreach', 'Resource Management', 'Event Management', 'Field Maintenance', 'ANY mappable data'] },
+      { title: 'Core features', icon: 'layers', items: ['Custom data sets', 'Activity tracking', 'Multiple integrations'] },
+      { title: 'Deployment steps', icon: 'flag', ordered: true, items: ['Gather your data', 'Configure points', 'Deploy any number of maps!'] },
+    ],
+    deployment: 'Less than 60 days',
+    deploymentLabel: 'Deployment time',
+    images: ['/products/geospatial-map.jpg'],
+    sheet: '/products/geospatial-one-sheet.jpg',
+    sheetAlt: 'Geospatial Management one-sheet',
+  },
+  {
+    slug: 'project-task-automation',
+    number: '02',
+    name: 'Project & Task Automation',
+    short: 'Build a project, assemble a team, and tasks assign themselves.',
+    lead: 'If you need a project management solution that features task automation, we offer a perfect platform to get started immediately. We help you set up your task catalog so that when you create a project and add your team, the tasks are generated automatically and assigned to the role-based team members you have identified. Your system can be ready within a week or two.',
+    highlights: [
+      'Create multiple task catalogs by role and project type',
+      'Build one or more role-based teams',
+      'Create a project, build a project team, and launch!',
+      'Tasks are assigned automatically with due dates; users get a dashboard with upcoming tasks for the week, month, and beyond',
+    ],
+    groups: [
+      { title: 'Automation', icon: 'sync', items: ['Task templates', 'Task catalog', 'Auto assignment', 'Team building', 'Task dependencies'] },
+      { title: 'Operations', icon: 'clock', items: ['Tracking', 'Reminders', 'Automatic communication'] },
+      { title: 'Deployment steps', icon: 'flag', ordered: true, items: ['Create task catalog', 'Define roles and team(s)', 'Create project(s)'] },
+    ],
+    deployment: 'Less than 30 days',
+    deploymentLabel: 'Deployment time',
+    images: ['/products/project-dashboard.jpg'],
+    sheet: '/products/project-task-one-sheet.jpg',
+    sheetAlt: 'Project Management and Task Automation one-sheet',
+  },
+  {
+    slug: 'procurement-vendor-management',
+    number: '03',
+    name: 'Procurement & Vendor Management',
+    short: 'One centralized system for requests, approvals, budgets and vendors.',
+    lead: 'Procurement is a vital function for local governments. A centralized system that provides transparency, control, and powerful reporting and tracking of expenditures is required. Our procurement and vendor management system delivers that and more.',
+    highlights: [
+      'Centralized request intake for goods and services across departments',
+      'Multi-stage approval workflows with dynamic routing logic',
+      'Real-time budget validation and spend visibility',
+      'Deployed in under 30 days, with audit-ready reporting built in',
+    ],
+    groups: [
+      {
+        title: 'Core capabilities',
+        icon: 'layers',
+        items: [
+          'Centralized request intake for goods and services across departments',
+          'Configurable catalog management for standard and custom procurement items',
+          'Multi-stage approval workflows with dynamic routing logic',
+          'Automated notifications and status tracking across the procurement lifecycle',
+        ],
+      },
+      {
+        title: 'Financial & operational control',
+        icon: 'dollar',
+        items: [
+          'Budget validation and real-time spend visibility during request creation',
+          'Forecasting tools for departmental and organizational procurement planning',
+          'Purchase order generation and lifecycle tracking',
+          'Invoice intake, matching, and processing workflows',
+        ],
+      },
+      {
+        title: 'Workflow automation',
+        icon: 'sync',
+        items: [
+          'Conditional and branching approval paths based on thresholds, categories, or departments',
+          'SLA tracking for procurement cycle times',
+          'Automated escalation and exception handling',
+        ],
+      },
+      {
+        title: 'Reporting & insights',
+        icon: 'chart',
+        items: [
+          'Procurement cycle time analytics and bottleneck identification',
+          'Spend analysis by department, vendor, and category',
+          'Audit-ready reporting for compliance and transparency',
+        ],
+      },
+    ],
+    deployment: 'Less than 30 days',
+    deploymentLabel: 'Deployment time',
+    images: ['/products/procurement-dashboard.jpg', '/products/procurement-spend.jpg'],
+    sheet: '/products/procurement-one-sheet.jpg',
+    sheetAlt: 'Procurement and Vendor Management one-sheet',
+  },
+]
+
+export const productsBand = [
+  { text: '< 60', label: 'Days to deploy Geospatial Management' },
+  { text: '< 30', label: 'Days to deploy Project & Task Automation' },
+  { text: '< 30', label: 'Days to deploy Procurement & Vendor Management' },
+  { text: '30 min', label: 'Demo to see it in action' },
+]
+
+export const productsCta = {
+  title: 'Schedule your 30 minute demo',
+  text: 'See how Blackfin Cloud for Government can work for your agency. No sales script—just a focused walkthrough of the solution you care about.',
+  primary: { label: 'Schedule a Call', href: contact.calendly },
+  secondary: { label: 'Talk to a specialist', href: '/contact' },
 }
