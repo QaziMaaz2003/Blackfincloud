@@ -40,9 +40,15 @@ export function Header() {
               {n.label}
             </NavLink>
           ))}
-          <Link className="et_pb_button et_pb_button--primary bf-nav__cta" to="/contact" onClick={() => setOpen(false)}>
+          <a
+            className="et_pb_button et_pb_button--primary bf-nav__cta"
+            href={contact.calendly}
+            target="_blank"
+            rel="noreferrer"
+            onClick={() => setOpen(false)}
+          >
             Book Consultation
-          </Link>
+          </a>
         </nav>
         <button
           className="bf-burger"

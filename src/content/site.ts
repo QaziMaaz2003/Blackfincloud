@@ -16,8 +16,8 @@ export const contact = {
   phoneHref: 'tel:+19494780901',
   email: 'contracts@blackfincloud.com',
   linkedin: 'https://www.linkedin.com/in/owenbscott/',
-  // 30-minute demo / discovery booking link (same one used on go.blackfingov.com)
-  calendly: 'https://calendly.com/blackfincloud/30min',
+  // Meeting booking link. Every "book a meeting / schedule a call" button points here.
+  calendly: 'https://calendly.com/blackfincloud/30min?back=1',
 }
 
 export const mapsLink = (address: string) => `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`
@@ -37,7 +37,7 @@ export const hero = {
   title: 'Software built for how you actually work.',
   subtitle:
     'Enterprise-grade low-code solutions shaped around your operations—and delivered in weeks instead of years.',
-  primaryCta: { label: 'Schedule free discovery call', href: '/contact' },
+  primaryCta: { label: 'Schedule free discovery call', href: contact.calendly },
   secondaryCta: { label: 'Explore Power Platform', href: '/power-platform' },
   image: unsplash('1522071820081-009f0129c71c', 1800),
   imageAlt: 'Operations leaders reviewing a digital workflow dashboard',
@@ -388,7 +388,7 @@ export const pages = {
 export const cta = {
   title: 'Bring us the process that slows you down.',
   text: "In a focused discovery call, we'll map the bottleneck, identify the right Microsoft tools, and outline a practical next step.",
-  primary: { label: 'Schedule free discovery call', href: '/contact' },
+  primary: { label: 'Schedule free discovery call', href: contact.calendly },
   secondary: { label: 'Call ' + contact.phone, href: contact.phoneHref },
 }
 
