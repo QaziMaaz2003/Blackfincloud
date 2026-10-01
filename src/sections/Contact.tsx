@@ -2,7 +2,7 @@ import { useState, type FormEvent } from 'react'
 import { Column, Row, Section } from '../components/divi'
 import { Heading } from '../components/modules'
 import { Icon } from '../components/modules/Icon'
-import { contact, form } from '../content/site'
+import { contact, form, mapsLink } from '../content/site'
 
 /** Divi Contact Form module (or Fluent/WPForms). Front-end only — no backend wired. */
 function DiscoveryForm() {
@@ -93,8 +93,21 @@ export function Contact() {
             </li>
             <li>
               <Icon name="pin" size={18} />
-              <span>{contact.address}</span>
+              <a href={mapsLink(contact.address)} target="_blank" rel="noreferrer">
+                {contact.address}
+              </a>
             </li>
+            {contact.otherOffices.map((o) => (
+              <li key={o.address} className="bf-contact__office">
+                <Icon name="pin" size={18} />
+                <span>
+                  <em>{o.name}</em>
+                  <a href={mapsLink(o.address)} target="_blank" rel="noreferrer">
+                    {o.address}
+                  </a>
+                </span>
+              </li>
+            ))}
           </ul>
           <p className="bf-contact__note">{form.note}</p>
           <p className="bf-contact__note">

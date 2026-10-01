@@ -1,4 +1,4 @@
-import { faq, homeStats, useCases, why } from '../content/site'
+import { faq, homeStats, products, useCases, why } from '../content/site'
 import { usePageMeta } from '../lib/usePageMeta'
 import { CardGrid, Ecosystem, Gallery } from '../sections/Blocks'
 import {
@@ -12,6 +12,7 @@ import {
   WorkTeaser,
 } from '../sections/Content'
 import { Hero } from '../sections/Hero'
+import { ProductOverview } from '../sections/ProductBlocks'
 import { CtaBanner, StatsBand } from '../sections/Shared'
 
 export function Home() {
@@ -23,10 +24,19 @@ export function Home() {
     <>
       <Hero />
       <CardGrid {...why} cols={3} tone="light" />
-      <Ecosystem tone="alt" more={{ label: 'Explore all solutions', href: '/solutions' }} />
+      <Ecosystem tone="alt" more={{ label: 'Explore Power Platform', href: '/power-platform' }} />
       <StatsBand stats={homeStats} />
       <Advantage />
-      <CardGrid {...useCases} cols={3} tone="light" />
+      <ProductOverview
+        items={products}
+        eyebrow="Blackfin Cloud for Government"
+        title="Tools you can use. Deployed now."
+        text="Three flexible solutions for state and local government, deployed in weeks, not months, and priced for any agency."
+        tone="light"
+        linkTo="/products"
+        more={{ label: 'Explore all products', href: '/products' }}
+      />
+      <CardGrid {...useCases} cols={3} tone="alt" />
       <ProcessTeaser />
       <IndustriesTeaser />
       <WorkTeaser />

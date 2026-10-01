@@ -45,7 +45,8 @@ export function Button({
 }) {
   const className = `et_pb_button et_pb_button--${variant}`
   // Internal pages use the router; tel:, mailto: and external URLs stay plain anchors
-  if (href.startsWith('/') && !external) {
+  const isExternal = external ?? /^https?:/.test(href)
+  if (href.startsWith('/') && !isExternal) {
     return (
       <Link className={className} to={href}>
         {children}
@@ -53,7 +54,7 @@ export function Button({
     )
   }
   return (
-    <a className={className} href={href} {...(external ? { target: '_blank', rel: 'noreferrer' } : {})}>
+    <a className={className} href={href} {...(isExternal ? { target: '_blank', rel: 'noreferrer' } : {})}>
       {children}
     </a>
   )

@@ -4,11 +4,11 @@ import { CardGrid, Ecosystem } from '../sections/Blocks'
 import { Advantage, Faq, Roi } from '../sections/Content'
 import { CtaBanner, PageHero, Split } from '../sections/Shared'
 
-export function Solutions() {
-  usePageMeta('Solutions', 'Microsoft Dynamics 365, Power Apps, Power Automate and Power BI solutions designed as one connected layer for your operations.')
+export function PowerPlatform() {
+  usePageMeta('Power Platform', 'Microsoft Power Platform and Dynamics 365—Power Apps, Power Automate and Power BI—designed as one connected layer for your operations.')
   return (
     <>
-      <PageHero {...pages.solutions} />
+      <PageHero {...pages.powerPlatform} />
       <Ecosystem tone="light" />
       {solutions.products.map((p, i) => (
         <Split

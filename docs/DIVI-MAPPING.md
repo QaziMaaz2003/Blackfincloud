@@ -40,7 +40,7 @@ CSS class names in the React app (`et_pb_section`, `et_pb_row`, `et_pb_blurb`, �
 
 Create Design Presets: **Button/Primary**, **Button/Ghost** (transparent, white 2px border), **Blurb/Card** (white, 1px `#e2e8f1` border, 16px radius, soft shadow, hover lift via Transform → Translate Y −6px), **Toggle/FAQ**.
 
-## Pages (8 Divi pages)
+## Pages (9 Divi pages)
 
 Create these WordPress pages (Pages → Add New, edit with Divi). Slugs match the React routes so URLs stay identical.
 
@@ -48,14 +48,15 @@ Create these WordPress pages (Pages → Add New, edit with Divi). Slugs match th
 | --- | --- | --- | --- |
 | Home | `/` (set as Front Page) | `src/pages/Home.tsx` | via logo |
 | About | `/about` | `About.tsx` | 1st item |
-| Solutions | `/solutions` | `Solutions.tsx` | 2nd |
-| Industries | `/industries` | `Industries.tsx` | 3rd |
-| Past Performance | `/past-performance` | `PastPerformance.tsx` | 4th |
-| Process | `/process` | `Process.tsx` | 5th |
-| CMAS Contract | `/cmas-contract` | `CmasContract.tsx` | 6th |
+| Power Platform | `/power-platform` (formerly `/solutions` — 301 redirect) | `PowerPlatform.tsx` | 2nd |
+| Products | `/products` | `Products.tsx` | 3rd |
+| Industries | `/industries` | `Industries.tsx` | 4th |
+| Past Performance | `/past-performance` | `PastPerformance.tsx` | 5th |
+| Process | `/process` | `Process.tsx` | 6th |
+| CMAS Contract | `/cmas-contract` | `CmasContract.tsx` | 7th |
 | Contact | `/contact` | `Contact.tsx` | "Book Consultation" button |
 
-**Primary menu order (Appearance → Menus):** About, Solutions, Industries, Past Performance, Process, CMAS Contract. The header's "Book Consultation" button links to `/contact`.
+**Primary menu order (Appearance → Menus):** About, Power Platform, Products, Industries, Past Performance, Process, CMAS Contract. The header's "Book Consultation" button links to `/contact`.
 
 ### Reusable Divi Library layouts (build once, save as **Global**, reuse)
 
@@ -63,13 +64,13 @@ Create these WordPress pages (Pages → Add New, edit with Divi). Slugs match th
 | --- | --- | --- | --- |
 | **Page Hero** | `PageHero` (Shared.tsx) | Section, bg image + dark gradient overlay; Text (eyebrow, H1, lead) | every inner page |
 | **CTA Banner** | `CtaBanner` | Dark gradient Section; Text; 2 Buttons | every page |
-| **Split Feature** | `Split` | Row 1_2,1_2: Text (eyebrow, H2, lead, checklist, pills, Button) + Image; optional floating badge (Text module, absolute position) | About, Solutions, Process, Contact, CMAS |
+| **Split Feature** | `Split` | Row 1_2,1_2: Text (eyebrow, H2, lead, checklist, pills, Button) + Image; optional floating badge (Text module, absolute position) | About, Power Platform, Products, Contact, CMAS, Process, Contact, CMAS |
 | **Card Grid** | `CardGrid` (Blocks.tsx) | Text heading + rows of 3 or 4 **Blurb** modules (icon or image on top) | nearly every page |
 | **Stats Band** | `StatsBand` | Dark Section; Row of 4 **Number Counter** modules | Home, About, Past Performance |
 | **Mission Band** | `MissionBand` | Dark Section; one large Text (quote) | About |
 | **Timeline** | `Timeline` | Code module (HTML/CSS in `main.css` `.bf-timeline`) or 6 Blurbs in alternating columns | About |
 | **Photo Mosaic** | `Gallery` | Divi **Gallery** module (grid layout) or a Row of Image modules; captions as overlay text | Home, About |
-| **Ecosystem flow** | `Ecosystem` | Code module (`.bf-flow`) or Row 1_4×4 of Blurbs with arrow icons + a pill Text module beneath | Home, Solutions |
+| **Ecosystem flow** | `Ecosystem` | Code module (`.bf-flow`) or Row 1_4×4 of Blurbs with arrow icons + a pill Text module beneath | Home, Power Platform |
 | **Industry block** | `IndustryBlock` | Split Feature + Row 1_2,1_2 of two Text panels (Common challenges / What we deliver) | Industries |
 | **Case study** | `CaseStudy` | Split Feature + Row of 4 fact tiles (Text modules or Code) | Past Performance |
 | **Step block** | `StepBlock` | Split Feature with numbered badge + Row of two Text panels (You bring / We deliver) | Process |
@@ -77,10 +78,10 @@ Create these WordPress pages (Pages → Add New, edit with Divi). Slugs match th
 | **Credential tiles** | `CredentialTiles` | Row 1_4×4 of Text/Blurb modules | About, CMAS |
 | **Contact action cards** | `ContactCards` | Row 1_4×4 of Blurbs with the whole card linked (Blurb → Link) | Contact |
 | **Numbered steps** | `NumberedSteps` | Dark Section; Row of Blurbs with a large number as the title prefix | Contact, CMAS |
-| **FAQ** | `Faq` (Content.tsx) | Toggle modules; the first open | Home (3), Solutions (4), Process (3), Contact (5), CMAS (3) |
+| **FAQ** | `Faq` (Content.tsx) | Toggle modules; the first open | Home (3), Power Platform (4), Process (3), Contact (5), CMAS (3) |
 | **Deployment Notes** | `Deployment` | Dark Section; Testimonial + Image | Home, Past Performance |
-| **ROI calculator** | `Roi` + `RoiCalculator.tsx` | Code module (markup + ~15 lines JS) | Home, Solutions |
-| **Advantage table** | `Advantage` | Code module with the comparison table | Home, Solutions |
+| **ROI calculator** | `Roi` + `RoiCalculator.tsx` | Code module (markup + ~15 lines JS) | Home, Power Platform |
+| **Advantage table** | `Advantage` | Code module with the comparison table | Home, Power Platform |
 
 Page Hero background images, titles and lead text per page are in `pages` in `src/content/site.ts`. **Section backgrounds alternate white / `#f4f7fb` (dotted) / dark** to give the pages rhythm; the order below reflects that.
 
@@ -90,7 +91,7 @@ Hero (2_3,1_3: copy + glass "One connected Microsoft stack" card; then stats row
 ### About (`/about`) — 14 sections
 Page Hero → Split "Our story" (with "160+ deployments" badge) → Stats Band (Since 2010 · 60+ · 100+ · 160+) → Core competencies / Key differentiators panels → **Mission Band** → **Timeline** (2007, 2010, 2014–2018, 2019, 2024, Today) → **Values** (4 Blurbs) → Leadership (Owen Scott; initials avatar) → Photo mosaic → **Ways to work with Blackfin** (3 Blurbs) → Experience (Architecture / Governance / Adoption / Support) → **Credentials tiles** → Industries + clients pills → CTA.
 
-### Solutions (`/solutions`) — 10 sections
+### Power Platform (`/power-platform`) — 10 sections (renamed from "Solutions")
 Page Hero → Ecosystem flow → 4 Split Features (Dynamics 365, Power Apps, Power Automate, Power BI; each with checklist + use-case pills + "Discuss …" Button) → Advantage table → **Capabilities** (8 Blurbs, 2 rows of 4) → Split "Built on the Microsoft tools you already use" (integration pills: Microsoft 365, Teams, Outlook, SharePoint, Excel, Azure, legacy databases, line-of-business systems) → ROI calculator → FAQ (4) → CTA.
 
 ### Industries (`/industries`) — 8 sections
@@ -103,7 +104,24 @@ Page Hero → Stats Band (160+ / 4 / 15+ / 2019) → Case study LA County → Ca
 Page Hero → **Stepper** (01 Discovery → 02 Sprints → 03 GoLive) → 3 **Step blocks** → **Typical engagement** week bars (illustrative) → Documentation & training (dark, 3 Blurbs) → **Our commitments** (4 Blurbs) → FAQ (3) → CTA.
 
 ### Contact (`/contact`) — 7 sections
-Page Hero → **Contact action cards** (Call, Email, Book a call → Calendly, Visit → Google Maps link) → Discovery-call form (Divi Contact Form) → **Who should reach out** (4 image Blurbs) → Split "Helpful to have in mind" (checklist) → "What happens next" numbered steps (dark) → FAQ (5).
+Page Hero → **Contact action cards** (Call, Email, Book a call → Calendly 30-min link, Visit → Google Maps link to the Redding address) → Discovery-call form (Divi Contact Form) → **Who should reach out** (4 image Blurbs) → Split "Helpful to have in mind" (checklist) → "What happens next" numbered steps (dark) → FAQ (5).
+
+### Products (`/products`) — 9 sections
+Content transcribed from **go.blackfingov.com** ("Blackfin Cloud for Government") plus its three product one-sheets. All text is in `productsPage`, `productsIntro`, `products`, `productValues`, `productsBand` and `productsCta` in `site.ts`.
+
+Page Hero ("Tools you can use. Deployed now."; Buttons: *Schedule a Call* → Calendly, *See the products* → `#geospatial-management`) → **Deployment band** (dark; 4 Number Counters: < 60, < 30, < 30 days and a 30 min demo) → **Product overview** (heading + 3 card Blurbs with number, summary, deployment-time pill and an in-page "See …" link) → **3 Product sections** (CSS IDs `geospatial-management`, `project-task-automation`, `procurement-vendor-management`) → **Why Blackfin Cloud for Government** (3 Blurbs) → CTA banner "Schedule your 30 minute demo".
+
+Each **Product section** = Row 1_2,1_2 (Text: eyebrow "Product 0N", H2, optional tagline pill, lead, checklist, 2 Buttons; Image module(s) in a browser-style frame with a floating "Less than N days" badge) + a Row of 3 (or 4) feature-group panels. Panels are Text modules with an icon and a checklist (or numbered list for "Deployment steps").
+
+| Product | Panels |
+| --- | --- |
+| Geospatial Management | Potential uses · Core features · Deployment steps (< 60 days) |
+| Project & Task Automation | Automation · Operations · Deployment steps (< 30 days) |
+| Procurement & Vendor Management | Core capabilities · Financial & operational control · Workflow automation · Reporting & insights (< 30 days) |
+
+- **Buttons:** "Schedule your 30 minute demo" → `https://calendly.com/blackfincloud/30min` (new tab). "View one-sheet" → Divi **Image** module with *Open in Lightbox* pointing at the full one-sheet image (the React version uses a modal with a Download link).
+- **Images** are the client's own files, copied to `public/products/` → upload them to the WordPress Media Library: `geospatial-map.jpg`, `project-dashboard.jpg`, `procurement-dashboard.jpg`, `procurement-spend.jpg` (screenshots cropped from the one-sheets) and `geospatial-one-sheet.jpg`, `project-task-one-sheet.jpg`, `procurement-one-sheet.jpg` (full one-sheets).
+- **Home** has a Products teaser (3 overview cards + "Explore all products" Button) between the comparison table and the use cases.
 
 ### CMAS Contract (`/cmas-contract`) — 8 sections
 Page Hero → Split "What is CMAS?" (badge with contract number) → **Credentials tiles** (CMAS / CAGE / UEI / DUNS) → **NAICS list** (Code/Text module; codes + descriptions in `naicsDetail`) + Button → **Benefits** (3 Blurbs) → **How to buy** (4 numbered steps, dark) → FAQ (3) → CTA.
@@ -112,7 +130,7 @@ Scroll-in animations: on Text / Blurb / Toggle / Image modules set **Animation �
 
 ## Header / Footer (Theme Builder)
 
-- **Header**: Fixed, transparent over hero, becomes `rgba(6,15,31,.92)` after scroll (Divi: Sticky Options → Background color on sticky). Logo (Image module or SVG), Menu module (About, Solutions, Industries, Past Performance, Process, CMAS Contract — **About first**), Button "Book Consultation" → `/contact`. The active page link is teal (Divi: Menu → Link → Active Link Color `#22d3c5`).
+- **Header**: Fixed, transparent over hero, becomes `rgba(6,15,31,.92)` after scroll (Divi: Sticky Options → Background color on sticky). Logo (Image module or SVG), Menu module (About, Power Platform, Products, Industries, Past Performance, Process, CMAS Contract — **About first**), Button "Book Consultation" → `/contact`. The active page link is teal (Divi: Menu → Link → Active Link Color `#22d3c5`).
 - **Footer**: Dark section, Row 2_3,1_3,1_3,1_3 → logo + blurb + social icons · Explore (menu links + Contact) · Contact details · Government + NAICS. Legal row underneath.
 
 ## Images (Unsplash — free license; download into Media Library on WordPress)
@@ -133,7 +151,7 @@ Scroll-in animations: on Text / Blurb / Toggle / Image modules set **Animation �
 | About hero | `1521737604893-d14cc237f11d` |
 | About story | `1531482615713-2afd69097998` |
 | Home About teaser | `1556761175-b413da4baf72` |
-| Solutions hero | `1451187580459-43490279c0fa` |
+| Power Platform hero | `1451187580459-43490279c0fa` |
 | Dynamics 365 | `1551288049-bebda4e38f71` |
 | Power Apps | `1498050108023-c5249f4df085` |
 | Power Automate | `1518770660439-4636190af475` |
@@ -168,3 +186,13 @@ URL pattern: `https://images.unsplash.com/photo-<ID>?auto=format&fit=crop&w=1200
 - ROI calculator and comparison table are Code modules; keep them in one shared Code module each so they can be edited in one place.
 - Form validation/success state: use Divi Contact Form's built-in validation and success message.
 - Icons in blurbs are inline SVG in React; in Divi use the Blurb icon picker (Divi icons: "Group", "Grid", "Flash", "Bar chart", "Layers", "Shield", "Lifesaver").
+
+## Company details used across the site (`contact` in `site.ts`)
+
+| Item | Value | Where it appears |
+| --- | --- | --- |
+| Main address | 2055 Pine Street, Redding, CA 96001 | Footer, Contact page (list + "Visit" card; each links to Google Maps) |
+| Additional office | 26632 Towne Center Dr #312, Foothill Ranch, CA 92610 | Footer, Contact page (labelled "Foothill Ranch office") |
+| LinkedIn | https://www.linkedin.com/in/owenbscott/ | Footer social icon, About → Owen Scott block ("Connect on LinkedIn" Button) |
+| Booking link | https://calendly.com/blackfincloud/30min | Contact page, Products page, CTA banners |
+| Policy links | blackfincloud.com/terms-and-conditions/ and /privacy/ | Footer legal row (open in a new tab) |

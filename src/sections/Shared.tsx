@@ -9,11 +9,13 @@ export function PageHero({
   title,
   text,
   image,
+  actions,
 }: {
   eyebrow: string
   title: string
   text: string
   image: string
+  actions?: { label: string; href: string; variant?: 'primary' | 'ghost' }[]
 }) {
   return (
     <Section tone="image" bgImage={image} className="bf-hero bf-hero--page" padding="lg">
@@ -23,6 +25,15 @@ export function PageHero({
             <p className="et_pb_eyebrow et_pb_eyebrow--light">{eyebrow}</p>
             <h1>{title}</h1>
             <p className="bf-hero__sub">{text}</p>
+            {actions && (
+              <div className="et_pb_button_module">
+                {actions.map((a) => (
+                  <Button key={a.label} href={a.href} variant={a.variant ?? 'primary'}>
+                    {a.label}
+                  </Button>
+                ))}
+              </div>
+            )}
           </div>
         </Column>
       </Row>
@@ -123,16 +134,16 @@ export function Split({
 }
 
 /** Divi: Section (dark) + Text + 2 Buttons. Save as a Divi Library layout / Global module and reuse on every page. */
-export function CtaBanner() {
+export function CtaBanner({ content = cta }: { content?: typeof cta } = {}) {
   return (
     <Section tone="dark" padding="md" className="bf-cta">
       <Row>
         <Column>
-          <Heading title={cta.title} text={cta.text} invert />
+          <Heading title={content.title} text={content.text} invert />
           <div className="et_pb_button_module bf-cta__buttons">
-            <Button href={cta.primary.href}>{cta.primary.label}</Button>
-            <Button href={cta.secondary.href} variant="ghost">
-              {cta.secondary.label}
+            <Button href={content.primary.href}>{content.primary.label}</Button>
+            <Button href={content.secondary.href} variant="ghost">
+              {content.secondary.label}
             </Button>
           </div>
         </Column>

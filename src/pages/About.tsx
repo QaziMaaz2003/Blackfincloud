@@ -1,5 +1,5 @@
 import { Column, Row, Section } from '../components/divi'
-import { Heading, Text } from '../components/modules'
+import { Button, Heading, Text } from '../components/modules'
 import { Icon } from '../components/modules/Icon'
 import {
   about,
@@ -7,6 +7,7 @@ import {
   credentials,
   engage,
   hero,
+  contact,
   industriesAlso,
   leadership,
   pages,
@@ -77,6 +78,9 @@ export function About() {
           <Column>
             <Heading eyebrow={leadership.eyebrow} title={leadership.name} text={leadership.text} align="left" />
             <p className="bf-leader__role">{leadership.role}, Blackfin Cloud Services</p>
+            <Button href={contact.linkedin} variant="outline" external>
+              <Icon name="linkedin" size={18} /> Connect on LinkedIn
+            </Button>
           </Column>
         </Row>
       </Section>

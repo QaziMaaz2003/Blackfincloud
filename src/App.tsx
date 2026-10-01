@@ -1,13 +1,14 @@
 import { useEffect } from 'react'
-import { BrowserRouter, Route, Routes, useLocation } from 'react-router-dom'
+import { BrowserRouter, Navigate, Route, Routes, useLocation } from 'react-router-dom'
 import { About } from './pages/About'
 import { CmasContract } from './pages/CmasContract'
 import { Contact } from './pages/Contact'
 import { Home } from './pages/Home'
 import { Industries } from './pages/Industries'
 import { PastPerformance } from './pages/PastPerformance'
+import { PowerPlatform } from './pages/PowerPlatform'
 import { Process } from './pages/Process'
-import { Solutions } from './pages/Solutions'
+import { Products } from './pages/Products'
 import { Footer, Header } from './sections/Chrome'
 
 /** Scroll to #hash on route change, fade-in [data-reveal] elements as they enter view. */
@@ -51,7 +52,9 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
-          <Route path="/solutions" element={<Solutions />} />
+          <Route path="/power-platform" element={<PowerPlatform />} />
+          <Route path="/solutions" element={<Navigate to="/power-platform" replace />} />
+          <Route path="/products" element={<Products />} />
           <Route path="/industries" element={<Industries />} />
           <Route path="/past-performance" element={<PastPerformance />} />
           <Route path="/process" element={<Process />} />

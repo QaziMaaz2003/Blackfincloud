@@ -15,7 +15,8 @@ Vite + React 19 + TypeScript, plain CSS (no Tailwind), `react-router-dom` for th
 | --- | --- |
 | `/` | Home (why Blackfin, ecosystem, use cases, process, industries, work, gallery, ROI, FAQ) |
 | `/about` | About (first item in the navbar) |
-| `/solutions` | Solutions (+ low-code advantage, ROI calculator) |
+| `/power-platform` | Power Platform (formerly Solutions; `/solutions` redirects here) |
+| `/products` | Products — Blackfin Cloud for Government (Geospatial, Project & Task, Procurement) |
 | `/industries` | Industries |
 | `/past-performance` | Past Performance |
 | `/process` | Process |
@@ -39,8 +40,9 @@ src/
   components/divi/      Section / Row / Column  (= Divi Section / Row / Column)
   components/modules/   Heading, Text, Button, Image, Blurb, Counter, Testimonial, Toggle (= Divi modules)
   sections/             Reusable page blocks: Shared.tsx (PageHero, Split, CtaBanner, StatsBand), Blocks.tsx (CardGrid, Timeline,
-                        Gallery, Ecosystem, IndustryBlock, CaseStudy, StepBlock, WeekBars, ...), Content.tsx, Hero, Contact, Chrome (header/footer)
+                        Gallery, Ecosystem, IndustryBlock, CaseStudy, StepBlock, WeekBars, ...), ProductBlocks.tsx (Products page), Content.tsx, Hero, Contact, Chrome (header/footer)
   pages/                One file per page/route
+  public/products/      Client product screenshots and one-sheets (used on /products)
   content/site.ts       ALL copy, links, image URLs (copy into Divi modules from here)
   styles/tokens.css     Colors, fonts, radii, spacing (= Divi Theme Customizer / Design Presets)
   styles/main.css       Module styles using Divi-style class names (et_pb_*)
