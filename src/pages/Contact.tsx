@@ -1,4 +1,4 @@
-import { contactCards, contactSteps, pages, prepare, whoWeServe } from '../content/site'
+import { contact, contactCards, contactSteps, pages, prepare, whoWeServe } from '../content/site'
 import { usePageMeta } from '../lib/usePageMeta'
 import { CardGrid, ContactCards, NumberedSteps } from '../sections/Blocks'
 import { Contact as ContactSection } from '../sections/Contact'
@@ -9,7 +9,7 @@ export function Contact() {
   usePageMeta('Contact', 'Book a free discovery call with Blackfin Cloud Services. Government and commercial inquiries welcome.')
   return (
     <>
-      <PageHero {...pages.contact} />
+      <PageHero {...pages.contact} actions={[{ label: 'Book a meeting', href: contact.calendly }]} />
       <ContactCards items={contactCards} />
       <ContactSection />
       <CardGrid {...whoWeServe} cols={4} tone="alt" />

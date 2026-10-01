@@ -9,7 +9,7 @@ The live site (blackfincloud.com) is already WordPress, so this is a redesign of
    - Create the primary menu in this order: **About, Power Platform, Products, Industries, Past Performance, Process, CMAS Contract**.
 5. **Theme Builder**: create the Global Header and Global Footer described in the mapping doc.
 6. **Forms**: set up the discovery-call form (Divi Contact Form / Fluent Forms) to email `contracts@blackfincloud.com`; enable spam protection (reCAPTCHA).
-7. **Calendly**: already set to the client's real 30-minute booking link (`https://calendly.com/blackfincloud/30min`, the same one used on go.blackfingov.com).
+7. **Calendly**: the client's booking link is `https://calendly.com/blackfincloud/30min?back=1`. Use it as the URL of every meeting-booking Button (header "Book Consultation", hero and CTA-banner "Schedule free discovery call", Contact page, Products page) with *Link opens in new tab*. Full list of locations is in `DIVI-MAPPING.md` → Company details.
 8. **Media**: download the Unsplash images (IDs in the mapping doc) into the Media Library, add alt text, and compress them (e.g. ShortPixel/Imagify) — serve WebP.
 9. **SEO**: the new slugs are `/about`, `/power-platform`, `/products`, `/industries`, `/past-performance`, `/process`, `/cmas-contract`, `/contact` — keep any existing live-site URLs that match, and 301-redirect the old ones (e.g. old Microsoft Low-Code Platforms page → `/power-platform`; the earlier draft slug `/solutions` → `/power-platform`); install Yoast/RankMath; copy the `<title>` and meta description from `index.html`; add Organization schema.
 10. **Review**: check at Divi's tablet/phone previews (980/767/479px), test the form, run Lighthouse, then push staging to production.

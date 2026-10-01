@@ -119,7 +119,7 @@ Each **Product section** = Row 1_2,1_2 (Text: eyebrow "Product 0N", H2, optional
 | Project & Task Automation | Automation · Operations · Deployment steps (< 30 days) |
 | Procurement & Vendor Management | Core capabilities · Financial & operational control · Workflow automation · Reporting & insights (< 30 days) |
 
-- **Buttons:** "Schedule your 30 minute demo" → `https://calendly.com/blackfincloud/30min` (new tab). "View one-sheet" → Divi **Image** module with *Open in Lightbox* pointing at the full one-sheet image (the React version uses a modal with a Download link).
+- **Buttons:** "Schedule your 30 minute demo" → `https://calendly.com/blackfincloud/30min?back=1` (new tab). "View one-sheet" → Divi **Image** module with *Open in Lightbox* pointing at the full one-sheet image (the React version uses a modal with a Download link).
 - **Images** are the client's own files, copied to `public/products/` → upload them to the WordPress Media Library: `geospatial-map.jpg`, `project-dashboard.jpg`, `procurement-dashboard.jpg`, `procurement-spend.jpg` (screenshots cropped from the one-sheets) and `geospatial-one-sheet.jpg`, `project-task-one-sheet.jpg`, `procurement-one-sheet.jpg` (full one-sheets).
 - **Home** has a Products teaser (3 overview cards + "Explore all products" Button) between the comparison table and the use cases.
 
@@ -194,5 +194,5 @@ URL pattern: `https://images.unsplash.com/photo-<ID>?auto=format&fit=crop&w=1200
 | Main address | 2055 Pine Street, Redding, CA 96001 | Footer, Contact page (list + "Visit" card; each links to Google Maps) |
 | Additional office | 26632 Towne Center Dr #312, Foothill Ranch, CA 92610 | Footer, Contact page (labelled "Foothill Ranch office") |
 | LinkedIn | https://www.linkedin.com/in/owenbscott/ | Footer social icon, About → Owen Scott block ("Connect on LinkedIn" Button) |
-| Booking link | https://calendly.com/blackfincloud/30min | Contact page, Products page, CTA banners |
+| Booking link | https://calendly.com/blackfincloud/30min?back=1 | Header "Book Consultation" button, Home hero "Schedule free discovery call", the CTA banner on every page, Contact page (hero button, "Book a call" card, "Book on our calendar" link), Products page (all "Schedule…" buttons). Inquiry buttons ("Talk to a specialist", "Request a quote under CMAS", etc.) still go to /contact. All open in a new tab. |
 | Policy links | blackfincloud.com/terms-and-conditions/ and /privacy/ | Footer legal row (open in a new tab) |
