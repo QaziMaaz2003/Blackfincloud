@@ -30,6 +30,7 @@ export function About() {
         imageAlt="Blackfin consultants working through a solution with a client"
         paragraphs={about.text}
         badge={{ value: '160+', label: 'deployments delivered' }}
+        logo
       />
       <StatsBand stats={aboutStats} />
 

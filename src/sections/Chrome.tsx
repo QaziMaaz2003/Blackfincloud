@@ -7,10 +7,8 @@ import { contact, footer, mapsLink, nav } from '../content/site'
 function Logo({ light = false }: { light?: boolean }) {
   return (
     <Link to="/" className={`bf-logo ${light ? 'bf-logo--light' : ''}`} aria-label="Blackfin Cloud Services home">
-      <svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true">
-        <rect width="32" height="32" rx="9" fill="var(--bf-accent)" />
-        <path d="M6 22c4-1 7-5 8-12 3 3 6 7 12 8-5 1-8 4-10 8-1-3-4-4-10-4Z" fill="#fff" />
-      </svg>
+      {/* White mark: header and footer always sit on dark navy */}
+      <img src="/logo-white.png" alt="" width="46" height="48" />
       <span>
         Blackfin<em>Cloud</em>
       </span>

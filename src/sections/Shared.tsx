@@ -51,6 +51,7 @@ export function Split({
   points,
   tags,
   badge,
+  logo,
   image,
   imageAlt = '',
   reverse = false,
@@ -65,6 +66,8 @@ export function Split({
   points?: string[]
   tags?: string[]
   badge?: { value: string; label: string }
+  /** Show the brand lockup above the eyebrow (light sections only) */
+  logo?: boolean
   image: string
   imageAlt?: string
   reverse?: boolean
@@ -74,6 +77,7 @@ export function Split({
   const copy = (
     <Column>
       <Text className="et_pb_text_align_left">
+        {logo && <img className="bf-brandmark" src="/logo-dark.png" alt="Blackfin Cloud Services" width="96" height="81" />}
         {eyebrow && <p className="et_pb_eyebrow">{eyebrow}</p>}
         <h2 className="bf-h3">{title}</h2>
         {text && <p className="et_pb_lead">{text}</p>}

@@ -25,12 +25,12 @@ function Behaviors() {
   }, [pathname, hash])
 
   useEffect(() => {
-    const els = document.querySelectorAll<HTMLElement>('[data-reveal]:not(.is-visible)')
+    const els = document.querySelectorAll<HTMLElement>('[data-reveal]:not([data-revealed])')
     const io = new IntersectionObserver(
       (entries) =>
         entries.forEach((e) => {
           if (e.isIntersecting) {
-            e.target.classList.add('is-visible')
+            e.target.setAttribute('data-revealed', '')
             io.unobserve(e.target)
           }
         }),
