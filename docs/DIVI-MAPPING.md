@@ -196,3 +196,13 @@ URL pattern: `https://images.unsplash.com/photo-<ID>?auto=format&fit=crop&w=1200
 | LinkedIn | https://www.linkedin.com/in/owenbscott/ | Footer social icon, About → Owen Scott block ("Connect on LinkedIn" Button) |
 | Booking link | https://calendly.com/blackfincloud/30min?back=1 | Header "Book Consultation" button, Home hero "Schedule free discovery call", the CTA banner on every page, Contact page (hero button, "Book a call" card, "Book on our calendar" link), Products page (all "Schedule…" buttons). Inquiry buttons ("Talk to a specialist", "Request a quote under CMAS", etc.) still go to /contact. All open in a new tab. |
 | Policy links | blackfincloud.com/terms-and-conditions/ and /privacy/ | Footer legal row (open in a new tab) |
+
+## Logos (`public/`)
+
+| File | Source upload | Use |
+| --- | --- | --- |
+| `logo-white.png` | `white.png` (white fish mark, transparent) | Header and footer (both on dark navy), next to the "Blackfin Cloud" wordmark text. In Divi: Theme Builder header/footer Logo/Image module. |
+| `logo-dark.png` | `trans.png` (full dark BCS lockup, transparent; resized 2300px → 640px) | Light backgrounds: About → "Our story" and the Products overview heading. |
+| `favicon.png`, `apple-touch-icon.png` | `BCS_logo.png` (lockup on white) | Browser tab icon / home-screen icon. In WordPress: Appearance → Customize → Site Identity → Site Icon (use `apple-touch-icon.png`, 180px, or a 512px export of the original). |
+
+Original uploads remain in the client's Downloads folder; the repo holds the optimized copies only.

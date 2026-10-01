@@ -89,6 +89,7 @@ export function ProductOverview({
     <Section tone={tone} padding="md">
       <Row>
         <Column>
+          {!linkTo && <img className="bf-brandmark bf-brandmark--center" src="/logo-dark.png" alt="Blackfin Cloud Services" width="96" height="81" />}
           <Heading eyebrow={eyebrow} title={title} text={text} />
         </Column>
       </Row>
