@@ -23,9 +23,9 @@ export const contact = {
 export const mapsLink = (address: string) => `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`
 
 export const nav = [
+  { label: 'Products', href: '/products' },
   { label: 'About', href: '/about' },
   { label: 'Power Platform', href: '/power-platform' },
-  { label: 'Products', href: '/products' },
   { label: 'Industries', href: '/industries' },
   { label: 'Past Performance', href: '/past-performance' },
   { label: 'Process', href: '/process' },
