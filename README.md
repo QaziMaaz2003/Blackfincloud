@@ -14,9 +14,9 @@ Vite + React 19 + TypeScript, plain CSS (no Tailwind), `react-router-dom` for th
 | Route | Page |
 | --- | --- |
 | `/` | Home (why Blackfin, ecosystem, use cases, process, industries, work, gallery, ROI, FAQ) |
-| `/about` | About (first item in the navbar) |
+| `/about` | About |
 | `/power-platform` | Power Platform (formerly Solutions; `/solutions` redirects here) |
-| `/products` | Products — Blackfin Cloud for Government (Geospatial, Project & Task, Procurement) |
+| `/products` | Products — Blackfin Cloud for Government (Geospatial, Project & Task, Procurement); first item in the navbar |
 | `/industries` | Industries |
 | `/past-performance` | Past Performance |
 | `/process` | Process |

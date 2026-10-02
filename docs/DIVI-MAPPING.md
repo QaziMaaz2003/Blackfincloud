@@ -47,16 +47,16 @@ Create these WordPress pages (Pages → Add New, edit with Divi). Slugs match th
 | Page | Slug | React file | Main menu |
 | --- | --- | --- | --- |
 | Home | `/` (set as Front Page) | `src/pages/Home.tsx` | via logo |
-| About | `/about` | `About.tsx` | 1st item |
-| Power Platform | `/power-platform` (formerly `/solutions` — 301 redirect) | `PowerPlatform.tsx` | 2nd |
-| Products | `/products` | `Products.tsx` | 3rd |
+| Products | `/products` | `Products.tsx` | 1st item |
+| About | `/about` | `About.tsx` | 2nd |
+| Power Platform | `/power-platform` (formerly `/solutions` — 301 redirect) | `PowerPlatform.tsx` | 3rd |
 | Industries | `/industries` | `Industries.tsx` | 4th |
 | Past Performance | `/past-performance` | `PastPerformance.tsx` | 5th |
 | Process | `/process` | `Process.tsx` | 6th |
 | CMAS Contract | `/cmas-contract` | `CmasContract.tsx` | 7th |
 | Contact | `/contact` | `Contact.tsx` | "Book Consultation" button |
 
-**Primary menu order (Appearance → Menus):** About, Power Platform, Products, Industries, Past Performance, Process, CMAS Contract. The header's "Book Consultation" button links to `/contact`.
+**Primary menu order (Appearance → Menus):** Products, About, Power Platform, Industries, Past Performance, Process, CMAS Contract. The header's "Book Consultation" button links to `/contact`.
 
 ### Reusable Divi Library layouts (build once, save as **Global**, reuse)
 
@@ -130,7 +130,7 @@ Scroll-in animations: on Text / Blurb / Toggle / Image modules set **Animation �
 
 ## Header / Footer (Theme Builder)
 
-- **Header**: Fixed, transparent over hero, becomes `rgba(6,15,31,.92)` after scroll (Divi: Sticky Options → Background color on sticky). Logo (Image module or SVG), Menu module (About, Power Platform, Products, Industries, Past Performance, Process, CMAS Contract — **About first**), Button "Book Consultation" → `/contact`. The active page link is teal (Divi: Menu → Link → Active Link Color `#22d3c5`).
+- **Header**: Fixed, transparent over hero, becomes `rgba(6,15,31,.92)` after scroll (Divi: Sticky Options → Background color on sticky). Logo (Image module or SVG), Menu module (Products, About, Power Platform, Industries, Past Performance, Process, CMAS Contract — **Products first**), Button "Book Consultation" → `/contact`. The active page link is teal (Divi: Menu → Link → Active Link Color `#22d3c5`).
 - **Footer**: Dark section, Row 2_3,1_3,1_3,1_3 → logo + blurb + social icons · Explore (menu links + Contact) · Contact details · Government + NAICS. Legal row underneath.
 
 ## Images (Unsplash — free license; download into Media Library on WordPress)
